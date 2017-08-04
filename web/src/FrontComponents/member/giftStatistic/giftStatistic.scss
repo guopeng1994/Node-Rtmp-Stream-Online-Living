@@ -1,0 +1,95 @@
+.gift-statistics{
+	.income{
+		height: 50px;
+	    line-height: 50px;
+	    font-size: larger;
+	    margin-bottom: 20px;
+	    label{
+	    	padding-right: 10px;
+	    }
+	    span{
+	    	color: #f80;
+    		margin: 0 10px;
+	    }
+	    button{
+	    	margin-left: 15px;
+		    width: 80px;
+		    height: 35px;
+		    line-height: 35px;
+		    color: #fff;
+		    background-color: #0fbae9;
+		    cursor: pointer;
+		    &:hover{
+		    	background-color: #1ecbfa;
+		    }
+	    }
+	    .income-history{
+			span{
+				display: block;
+			    line-height: 50px;
+			    font-size: 14px;
+			    width: 80px;
+			    border-bottom: 2px solid #0fbae9;
+			}
+		}
+	    
+	}
+	.my-cost{
+		height: 100px;
+    	line-height: 50px;
+    	margin-bottom: 20px;
+    	.cost-money{
+    		.cost-money-gold{
+    			margin: 0 10px;
+    			color: #f80;
+    		}
+    		.cost-money-silver{
+    			margin: 0 10px;
+    			color: darkgray;
+    		}
+    	}
+    	.total-cost{
+			width: 265px;
+			float: left;
+    	}
+		.recharge{
+			button{
+				margin-left: 15px;
+			    width: 80px;
+			    height: 35px;
+			    line-height: 35px;
+			    color: #fff;
+			    background-color: #0fbae9;
+			    cursor: pointer;
+			    &:hover{
+			    	background-color: #1ecbfa;
+			    }
+			}
+		}
+		.cost-history{
+			span{
+				display: block;
+			    line-height: 50px;
+			    font-size: 14px;
+			    width: 80px;
+			    border-bottom: 2px solid #0fbae9;
+			}
+		}
+	}
+	table{
+		.ant-table-thead{
+			&>tr>th{
+				background-color: #ccf;
+    			color: #fff;
+    			text-align: center;
+			}
+		}
+	}
+}
+
+.payme{
+	width: 300px;
+    left: 50%;
+    margin-left: -150px;
+    position: relative;
+}

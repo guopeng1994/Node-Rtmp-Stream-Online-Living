@@ -1,0 +1,163 @@
+.header-nav-container{
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+.header-top-nav{
+  width: 980px;
+  min-width: 980px;
+  margin: 0 auto;
+  height: 55px;
+}
+.header-top-logo {
+  height: 45px;
+  margin: 5px 0;
+  float: left;
+}
+.header-top-logo-ico{
+  height: 45px;
+}
+.header-top-nav > *{
+  display: inline;
+}
+.header-top-nav > #header-nav-ul{
+  width: auto;
+  height: 100%;
+  float: left;
+  position: relative;
+  margin-left: 30px;
+}
+#header-nav-ul > li {
+  position: relative;
+  z-index: 0;
+  float: left;
+  min-width: 70px;
+  height: 31px;
+  margin: 12px 10px;
+  text-align: center;
+  border-radius: 30px;
+  &:nth-child(2)>a{
+    color: #fff;
+    background-color:#0fbae9;
+  }
+  &> a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 31px;
+    text-align: center;
+    color: #3c3c3c;
+    border-radius: 20px;
+    &:hover{
+      color: #fff;
+      background-color:#0fbae9;
+    }
+  }
+}
+.header-top-nav-parts-right{
+  width: auto;
+  float: right;
+  color: #8c8c8c;
+}
+.header-search{
+  float: left;
+  margin-right: 50px;
+}
+.header-search form{
+  position: relative;
+}
+.header-search .header-search-content{
+  width: 150px;
+  height: 25px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background-color: #f6f6f6;
+  margin: 15px auto;
+  transition: all 0.3s;
+}
+.header-search-content:focus{
+  width: 180px;
+
+}
+.header-search-content:focus + .header-search-icon > .header-search-submit{
+  background-position: -87px -51px;
+}
+.header-search-icon{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 5px;
+  top: 16.5px;
+}
+.header-search-submit{
+  width: 20px;
+  height: 20px;
+  background: url(/img/index-icons.png) no-repeat;
+  background-position: -65px -51px;
+  cursor: pointer;
+}
+.header-search-submit:hover{
+  background-position: -87px -51px;
+}
+.header-log-reg{
+  width:120px ;
+  height: 20px;
+  margin: 17.5px 0;
+  float: left;
+}
+.header-log-reg span{
+  padding: 0 8px;
+}
+.header-userinfo{
+    width: 200px;
+    float: left;
+    line-height: 55px;
+    height: 55px;
+    span{
+      color: #000;
+      float: left;
+    }
+    .ant-dropdown-link{
+      color: #108ee9;
+      float: left;
+      img{
+        width: 25px;
+        margin:15px 5px;
+        float: left;
+      }
+    }
+}
+.search-container{
+  width: 200px;
+  margin: 0 5px;
+  height: 32px;
+  border-radius: 2px;
+  border: 1px solid #eee;
+  position: relative;
+  top: 10px;
+  float: left;
+}
+.search-container .search-content{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 10px;
+  background-color: #fff;
+  color: #888;
+}
+.search-container .search-icon{
+  width: 32px;
+  height: 32px;
+  float: right;
+  i{
+    font-size: 16px;
+    color: burlywood;
+    cursor: pointer;
+    margin: 8px;
+    &:hover{
+      color: #0fbae9;
+    }
+  }
+}
+.ant-dropdown-menu-item{
+  text-align: center;
+}

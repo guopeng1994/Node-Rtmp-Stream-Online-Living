@@ -1,0 +1,238 @@
+
+/*左侧导航菜单*/
+/*公共样式*/
+#menu{
+	background:url(/img/left-bg.jpg) no-repeat;
+	float: left;
+	height: calc(100%-55px);
+	position: fixed;
+	left: 0;
+	top: 55px;
+	background-size: 100% 100%;
+	z-index: 998;
+}
+/*展开关闭按钮*/
+.left-btn{
+	width: 15px;
+	height: 150px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -50px;
+	right: -15px;
+}
+
+
+
+/*收起*/
+#menu_close{
+	width: 66px;
+	height: 100%;
+	background:url(/img/left-bg.jpg) no-repeat;
+}
+#menu_close ul li{
+	width: 100%;
+	height: 80px;
+	border-bottom: 0.5px solid #555 ;
+	&:first-child{
+		height: 105px;
+	}
+}
+#menu_close ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#menu_close ul li i{
+	font-size: 34px;
+	margin: 5px 16px;
+}
+#menu_close ul li span{
+	font-size: 1.1em;
+	display: block;
+	height: 20px;
+	vertical-align: middle;
+	line-height: 20px;
+	text-align: center;
+	padding: 2px;
+}
+#menu_close .menu-close-logo{
+	width: 52px;
+	padding: 25px 0 7px 7px;
+}
+
+#menu_close button{
+	cursor: pointer;
+	width: 100%;
+	height: 55px;
+	position: absolute;
+	bottom: 0px;
+	background-color: #000;
+	color: #d4d4d4;
+	font-size: 0.9em;
+}
+#menu_close button:hover{
+	color: #0fbae9;
+}
+
+#menu_close .left-btn span{
+	position: absolute;
+	display: block;
+	width: 15px;
+	height: 150px;
+	background: url(/img/side-left-btn.png) no-repeat;
+	background-position:0px  -150px;
+}
+#menu_close .left-btn span:hover{
+	background-position:-22px  -150px;
+}
+
+
+.menu-open-top{
+	position: relative;
+	top: 0;
+	z-index: 1;
+	background-color: #394143;
+}
+
+/*展开*/
+#menu_open{
+	width: 230px;
+	height: 100%;
+	overflow-y: hidden;
+}
+#menu_open .menu-open-search{
+	width: 230px;
+	height: 200px;
+	border-bottom: 1px solid #333;
+	.menu-userinfo{
+		img{
+			margin: 15px 65px 5px 65px;
+    		width: 100px;
+		}
+		p{
+			text-align: center;
+		    line-height: 20px;
+		    color: #ff8800;
+		    &:nth-child(1){
+		    	color: #0fbae9;
+		    	font-size: larger;
+		    }
+		}
+		.log-reg{
+			height: 20px;
+			position: relative;
+			color: #fff;
+			width: 80px;
+			margin: 15px 75px;
+			span{
+				padding: 0 5px;
+				vertical-align: top;
+				font-size: 14px;
+				cursor: pointer;
+				&:hover{
+					color: #0fbae9;
+				}
+			}
+		}
+	}
+
+}
+#menu_open .left-btn span{
+	position: absolute;
+	display: block;
+	width: 15px;
+	height: 150px;
+	background: url(/img/side-left-btn.png) no-repeat;
+	background-position:0px  0px;
+}
+#menu_open .left-btn span:hover{
+	background-position:-22px  0px;
+}
+
+
+
+
+
+
+
+#contents{
+	width: 100%;
+	overflow-y:scroll;
+	height:500px;
+	position: relative;
+	z-index: 0;
+	background:url(/img/left-bg.jpg) no-repeat;
+}
+.sidebar-category{
+	width: 200px;
+	margin: 0 auto;
+}
+.sidebar-category-head{
+	width: 100%;
+	height: auto;
+}
+.sidebar-category-head-tltle{
+	padding: 12px 0;
+	width: 100%;
+	line-height: 40px;
+	font-size: 0.95em;
+	color: #0fbae9;
+}
+.sidebar-category-content{
+	width: 200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.sidebar-category-content-list{
+	height: auto;
+	margin-right: -5px;
+	position: relative;
+}
+.sidebar-category-content-list-item{
+	width: 63px;
+	margin: 0px 5px 5px 0;
+	height: 28px;
+	float: left;
+}
+.sidebar-category-content-list-item a{
+	display: block;
+	padding: 0px 5px;
+	color: #d6d6d6;
+	font-size: 0.7em;
+	line-height: 28px;
+	background-color: #262b29;
+	border-radius: 2px;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.sidebar-category-content-list-item a:hover{
+	background-color: #0fbae9;
+	color: #fff;
+}
+
+#sidebar-be-anchor{
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 0;
+	button{
+		background-color: #0fbae9;
+		width: 130px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		color: #fff;
+		margin: 10px 50px;
+		cursor: pointer;
+		img{
+			padding: 2.5px 5px;
+			vertical-align: top;
+		}
+	}
+}

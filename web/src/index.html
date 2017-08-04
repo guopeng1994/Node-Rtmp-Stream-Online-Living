@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基于Node.js的在线直播网站</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" media="all" href="/css/cssBundle.css">
+    <link rel="stylesheet" media="all" href="/css/antd.min.css">
+</head>
+<body id="app">
+
+
+<script src="/js/react-with-addons.min.js"></script>
+<script src="/js/react-dom.min.js"></script>
+<script src="/js/react-router.min.js"></script>
+<script src="/js/react-router-redux.min.js"></script>
+<script src="/js/redux.min.js"></script>
+<script src="/js/react-redux.min.js"></script>
+<script src="/js/redux-thunk.min.js"></script>
+<script src="/js/antd.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/socket.io.min.js"></script>
+<script src="/ckplayer/ckplayer.js"></script>
+
+<script src="/js/jsBundle.js"></script>
+<script>
+//$(function(){
+
+    var _CK_=null;
+    var bObj=null;
+    var currentOpacity = 100;
+    var currentPositionRange = null;//弹幕位置范围最大值 
+    var socket;
+    var nowLocation = window.location.pathname.substr(1,4);//获取当前页面的位置
+    socket = io.connect('http://localhost:80');
+    //获取用户信息
+    let userInfo;
+    let barrageReplace;
+    let arrCookie = document.cookie.split(';') || [];
+    for(let i in arrCookie){
+        var arr = arrCookie[i].trim().split("=");
+        if (arr[0] == "userinfo") {
+            if (arr.length > 1)
+                userInfo = arr[1];
+            else
+                userInfo = null;
+        }else if(arr[0] == "barrageReplace"){
+            if (arr.length > 1)
+                barrageReplace = arr[1];
+            else
+                barrageReplace = null;
+        }
+    }
+    if(userInfo)
+        userInfo = JSON.parse(decodeURIComponent(userInfo).substring(2));
+    if(barrageReplace)
+        barrageReplace = JSON.parse(decodeURIComponent(barrageReplace).substring(2));
+
+    //只有在room index页面下才加载播放器
+  // if(nowLocation == "room" || nowLocation == "index")
+  // {
+      socket.on('welcome', (data)=>{
+        $(".danmu-content-detail").append(data.welcome);
+      });
+      var url;
+      if(nowLocation == "room")//room页面
+        url = window.location.pathname.substr(6);//去掉/room/
+      else//index页面
+        url = $("#recomm_list li:first-child").attr('data-url');
+
+
+      console.log(url);
+      // if(!url)
+      //   return;
+      var flashvars={
+        f:'rtmp://localhost:1935/live/'+url,
+        s:'0',c:0,b:0,v:'50',p:'1',h:'0',wh:'1920:1080',lv:'1',
+        loaded:"loadedHandler",e:'3',fs:1
+      };
+      var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'Opaque',allowFullScreenInteractive:true};
+
+      CKobject.embedSWF('/ckplayer/ckplayer.swf','myplayer','ckplayer_a1','100%','100%',flashvars,params);
+        
+      $("#recomm_list li").on('click',function(){//重新渲染
+      	//console.log($(this).attr('data-url'));
+        var flashvars={
+          f:'rtmp://localhost:1935/live/'+$(this).attr('data-url'),
+          s:'0',c:0,b:0,v:'50',p:'1',h:'0',wh:'1920:1080',lv:'1',
+          loaded:'loadedHandler',e:'3',fs:1
+        };
+        var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'Opaque',allowFullScreenInteractive:true};
+        CKobject.embedSWF('/ckplayer/ckplayer.swf','myplayer','ckplayer_a1','100%','100%',flashvars,params);
+      });
+
+  // }
+
+      function loadedHandler(){          
+        _CK_=CKobject.getObjectById('ckplayer_a1');
+        currentPositionRange = _CK_.getStatus().height;//初始化位置范围
+        _CK_.addListener('sendBarrage',"sendBarrageHandler");//监听发送弹幕的内容
+        _CK_.addListener('changeBarrageOpacity',"barrageOpacityHandler");//监听修改弹幕透明度
+        _CK_.addListener('changeBarragePosition',"barragePositionHandler");//监听修改弹幕位置
+      }
+      function sendBarrageHandler(s){
+        let random = Math.floor(Math.random()*(currentPositionRange/20-1)+1)*20;//保证为20的整数倍
+        //过滤操作
+        for(let i in barrageReplace){
+          s = s.replace(barrageReplace[i].br_be_replaced,barrageReplace[i].br_replace_content);
+        }
+        var item = {
+          background: {
+            backgroundColor: 0x000000, 
+            borderColor: null, 
+            radius: 25, 
+            alpha: 0,
+            height: 20 
+          },
+          list: [
+            {
+              type: "text",
+              text: s,
+              color: "#FFFFFF",
+              size: 16,
+              face: "Microsoft YaHei,微软雅黑",
+              alpha: currentOpacity,
+              left: 10,
+              right: 10,
+              top: -2
+            }
+          ],
+          y: random,
+          time: 1,
+          step: 2,
+          marginX: 20,
+          marginY: 20
+        }
+        if(userInfo)
+          item.poster = userInfo.user_nickname;
+        socket.emit('postDanmu',item);
+      }
+      function barrageOpacityHandler(value){
+          currentOpacity = value;
+      }
+      function barragePositionHandler(value){//返回的是播放器高度 1 1/2 1/4
+          currentPositionRange = value;
+      }
+  
+  
+
+   $('.post-btn').on('click',function(){
+      let content = $('.danmuText').val();
+      if(content == '')//为空不提交
+      {
+        $(this).val('');
+        return;
+      }
+      sendBarrageHandler(content);
+      $('.danmuText').val('');
+    });
+
+    $('.danmuText').on('keypress',function(e){
+      if(e.keyCode == 13){//enter
+        e.preventDefault();
+        let content = $(this).val();
+        if(content == '')//为空不提交
+        {
+          $(this).val('');//清除换行符
+          return;
+        }
+        sendBarrageHandler(content);
+        $(this).val('');
+      }
+    });
+
+
+
+      socket.on("channelDanmu",(data)=>{//接收后台广播出来的弹幕信息并渲染
+        //修改弹幕的位置范围
+        data.y = Math.floor(Math.random()*(currentPositionRange/20-1)+1)*20;
+        console.log(_CK_);
+        console.log(data);
+        _CK_.addBarrage(data);//flash渲染弹幕
+        //弹幕内容区域渲染弹幕内容
+        $(".danmu-content-detail").append("<li><span>"+data.poster+"：</span>"+data.list[0].text+"</li>");
+        let contentHeight = $(".danmu-content-detail")[0].scrollHeight;
+        if($(".scroll-Control").text() == '停止滚屏')
+          $(".danmu-content-detail").scrollTop(contentHeight);
+      }); 
+//});
+</script>
+</body>
+</html>

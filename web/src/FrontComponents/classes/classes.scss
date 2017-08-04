@@ -1,0 +1,40 @@
+.classes{
+	.channels{
+		position: relative;
+		padding:30px;
+		.channel-item{
+			float: left;
+			width: 100%;
+			p{
+				height: 30px;
+			    line-height: 28px;
+			    font-size: 16px;
+			    margin-bottom: 10px;
+			    div{
+			    	float: left;
+				    padding: 0 20px;
+				    border-bottom: 2px solid #ff4500;
+			    }
+			}
+			.channel-details{
+				ul{
+					float: left;
+					li{
+						float: left;
+					    padding: 0 10px;
+					    background-color: #0fbae9;
+					    line-height: 25px;
+					    margin-right: 20px;
+					    margin-bottom: 20px;
+					    a{
+					    	color: #fff;
+					    	&:hover{
+					    		color: #fff
+					    	}
+					    }
+					}
+				}
+			}
+		}
+	}
+}

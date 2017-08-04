@@ -1,0 +1,19 @@
+.channel-rooms{
+	left: 230px;
+    position: relative;
+    padding: 40px 20px;
+    float: left;
+    .channel{
+	    font-size: 20px;
+	    display: block;
+	    max-width: 220px;
+	    text-align: left;
+	    border-bottom: 2px solid #0fbae9;
+	    margin-bottom: 20px;
+    }
+    .none-room{
+    	height: 25px;
+    	font-size: larger;
+    }
+}
+

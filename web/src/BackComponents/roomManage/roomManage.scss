@@ -1,0 +1,171 @@
+.room-manage{
+	background-color: #fff;
+	height: 640px;
+	overflow-y:scroll; 
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px;
+	float: left;
+	border-radius: 5px;
+	&:after{
+		clear: both;
+	}
+	button.ant-btn{
+		margin:3px 5px;
+	}
+	.add-btn-container{
+		margin: 15px 0;
+		height: 30px;
+		button.ant-btn{
+			margin:0;
+		}
+		.search{
+			width: 150px;
+			float: left;
+			margin-left: 25px;
+		}
+	}
+	table{
+		user-select:initial;
+		thead{
+			th{
+				text-align: center;
+				background-color: #108E81;
+				color: #fff;
+			}
+		}
+		.status{
+			display: block;
+			width: 65px;
+			height: 20px;
+			line-height: 20px;
+			&>*{
+				display: block;
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				margin: 3px 0;
+				float: right
+			}
+			.status_green{
+				background-color: green;
+			}
+			.status_gray{
+				background-color: gray;
+			}
+			.status_orange{
+				background-color: orange;
+			}
+			.status_red{
+				background-color: red;
+			}
+			.applying{
+				color: #108ee9;
+			    float: left;
+			    display: block;
+			    width: auto;
+			    cursor: pointer;
+			}
+		}
+		.action{
+			display: block;
+			min-height:28px;
+			float: left;
+			margin: 0px auto;
+		}
+	}
+	.recomm{
+		margin-top: 70px;
+		.recomm_groupname{
+			background-color: #108E81;
+			border-radius: 5px;
+			width: 200px;
+			height: 30px;
+			line-height: 30px;
+			color: #fff;
+			padding: 0 20px;
+			margin:20px 0;
+		}
+		.ant-row{
+			margin-left: -8px;
+			margin-right: -8px;
+			margin-bottom: 16px;
+			&>div{
+				padding: 0 8px;
+				margin-bottom: 10px;
+			}
+		}
+		.ant-card{
+			background-color: ivory;
+			cursor: pointer;
+		}
+		.ant-card-head-title{
+			color: #777;
+		}
+		.upload-container{
+			margin:15px auto;
+			position: relative;
+			height: 80px;
+		}
+		.upload_img{
+			width: 100%;
+			height: 80px;
+			position: absolute;
+			opacity: 0;
+			cursor: pointer;
+			z-index: 2
+		}
+		.preview_img{
+			position: absolute;
+		    z-index: 1;
+		    width: 100%;
+		    height: 100%;
+		    left: 0;
+		    top: 0;
+		    object-fit: scale-down;
+		}
+		.upload_btn{
+			width: 60px;
+		    height: 40px;
+		    margin: 0 auto;
+		    position: relative;
+		    top: 15px;
+		    font-size: 14px;
+		    i{
+		    	text-align: center;
+    			width: 100%;
+		    }
+		    .ant-upload-text{
+		    	text-align: center;
+		    }
+		}
+		button{
+			width: 100%;
+		    height: 30px;
+		    color: #fff;
+		    background-color: #0fbae9;
+		    border-radius: 3px;
+		    cursor: pointer;
+		    &:hover{
+		    	background-color: #0FBAC0;
+		    }
+		}
+	}
+}
+.ban-reason{
+	display: block;
+	max-width: 220px;
+	height: auto;
+	line-height: 25px;
+	padding: 0 5px;
+	select{
+		border: 1px solid #bbb;
+		height: 25px;
+	}
+	&>div{
+		margin-top: 20px;
+		button{
+			margin: 0 20px;
+		}
+	}
+}

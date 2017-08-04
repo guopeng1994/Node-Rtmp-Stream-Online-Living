@@ -1,0 +1,58 @@
+.blacklist-box{
+	.blacklist-title{
+		font-size: 20px;
+	    color: #0fbae9;
+	    border-bottom: 2px solid #ff4500;
+	    text-align: left;
+	    line-height: 50px;
+	    display: block;
+	    height: 50px;
+	    width: 140px;
+	}
+	.manageable-room{
+		.manageable-room-item{
+			margin: 5px;
+			padding: 0 10px;
+			text-align: left;
+			color: #0fbae9;
+			height: 40px;
+			cursor: pointer;
+			overflow: hidden;
+			transition:height ease 0.5s;
+			&.item-open{
+				height:400px;
+				.manageable-room-item-title{
+					border-bottom: 0;
+				}
+				.blacklist-detail-box{
+					height: 360px;
+				}
+			}
+			.manageable-room-item-title{
+				height: 40px;
+				line-height: 40px;
+				font-size: 15px;
+				border-bottom: 1px solid #ddd;
+				&:hover{
+					color: #0FBA9A;
+				}
+			}
+			.blacklist-detail-box{
+				height: 0;
+				width: 100%;
+				border: 1px solid #ddd;
+				transition:height ease 0.3s;
+			}
+		}
+	}
+	p{
+		&.no-data{
+			width: 100%;
+			height: 25px;
+			line-height: 25px;
+			text-align: center;
+			color: #555;
+			padding: 20px 0px;
+		}
+	}
+}

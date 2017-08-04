@@ -1,0 +1,166 @@
+.apply-anchor{
+	.apply-form{
+		h5{
+			height: 25px;
+		    line-height: 25px;
+		    text-align: center;
+		    background-color: #FF6600;
+		    color: #fff;
+		    margin-bottom: 10px;
+		}
+		p{
+			width: 100%;
+			margin: 10px auto;
+			min-height: 30px;
+			line-height: 30px;
+			float: left;
+			span{
+				display: block;
+				width: 40%;
+				text-align: right;
+				float: left;
+				label{
+					color: #ff0000;
+				}
+				&:after{
+					clear: both;
+				}
+			}
+			&:nth-child(3),&:nth-child(4),&:nth-child(5){
+				span{
+					margin-top: 106px;
+				}
+			}
+			div{
+				width: 60%;
+				float: left;
+				position: relative;
+				&:after{
+					clear: both;
+				}
+				.input-text{
+					height: 30px;
+					width: 200px;
+					border: 1px solid #ddd;
+					text-indent: 5px;
+				}
+				.file-reader{
+					position: relative;
+					z-index: 1;
+					width: 200px;
+					height: 136px;
+					border: 1px dashed #ccc;
+					img{
+						width: 100%;
+					    max-height: 100%;
+					    object-fit: contain;
+					}
+				}
+				.input-file{
+					position: absolute;
+					z-index: 2;
+					opacity: 0;
+					width: 200px;
+					height: 136px;
+					cursor: pointer;
+				}
+			}
+			&.rules{
+				div{
+					left: 40%;
+					input{
+						vertical-align: text-bottom;
+					}
+				}
+			}
+		}
+		button{
+			width: 200px;
+		    height: 30px;
+		    border-radius: 3px;
+		    color: #fff;
+		    background-color: #0fbae9;
+		    left: 50%;
+		    margin-left: -100px;
+		    position: relative;
+		    cursor: pointer;
+		    &:hover{
+		    	background-color: #88caed;
+		    }
+		}
+	}
+	.applying-info{
+		width: 270px;
+		height: 180px;
+		margin:200px auto;
+		img{
+			width: 150px;
+			margin:0 60px;
+		}
+		p{
+			width: 270px;
+			height:30px;
+			line-height: 30px;
+			text-align: center;
+			color: #515151;
+		}
+	}
+	.start-live{
+		p{
+			width: 100%;
+			margin: 10px auto;
+			min-height: 30px;
+			line-height: 30px;
+			float: left;
+			&>span{
+				display: block;
+				width: 40%;
+				text-align: right;
+				float: left;
+				label{
+					color: #ff0000;
+				}
+				&:after{
+					clear: both;
+				}
+			}
+			div{
+				width: 60%;
+				float: left;
+				position: relative;
+				&:after{
+					clear: both;
+				}
+				&>input{
+					border: 1px solid #ddd;
+				    width: 250px;
+				    border-radius: 5px;
+				    height: 28px;
+				    padding: 4px;
+				}
+				textarea{
+					resize:none;
+					border: 1px solid #ddd;
+					width: 400px;
+				    height: 150px;
+				    padding: 5px;
+				    line-height: 25px;
+				}
+			}
+		}
+		button{
+			width: 200px;
+		    height: 30px;
+		    border-radius: 3px;
+		    color: #fff;
+		    background-color: #0fbae9;
+		    left: 50%;
+		    margin-left: -100px;
+		    position: relative;
+		    cursor: pointer;
+		    &:hover{
+		    	background-color: #88caed;
+		    }
+		}
+	}
+}

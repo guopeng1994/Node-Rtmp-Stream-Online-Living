@@ -1,0 +1,1 @@
+export const QUERYAPPLY = "QUERYAPPLY" //查询申请的信息

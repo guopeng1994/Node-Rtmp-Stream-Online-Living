@@ -1,0 +1,412 @@
+//"default page resolution 1440*794 desktop resolution 1440*900
+.app{
+
+}
+
+.live-content{
+    background: url(/img/left-bg.jpg) no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.live-room{
+    width: 1000px;
+    height:855px;
+    margin-top: 30px;
+    background-color: #0fbae9;
+    .notice{
+        height: 130px;
+        width: 100%;
+        background-color: #F8F8B5;
+        border-top: 1px solid #0fbae9;
+        span{
+            font-size: 15px;
+            color: #555;
+            padding: 0 15px;
+            top: 10px;
+            position: relative;
+            font-weight: bold;
+        }
+        div{
+            background-color: #fff;
+            min-height: 100px;
+            line-height: 20px;
+            text-indent: 20px;
+            position: relative;
+            padding-top: 10px;
+            top: 20px;
+            color: #555;
+            font-size: 13px;
+        }
+    }
+}
+.live-room > div{
+    float: left;
+}
+
+.room-info{
+    .infos{
+        width: 700px;
+        height:100px;
+        float: left;
+        background-color: #fff;
+        border-right: 1px solid #eee;
+        p:nth-child(1){
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px;
+            font-size: 20px;
+        }
+        p:nth-child(2){
+            height: 30px;
+            line-height: 30px;
+            padding: 0 20px;
+            &>span{
+                float: left;
+                button{
+                    color: #0fbae9;
+                    margin: 0 10px;
+                    border: 1px solid;
+                }
+                &.md5{
+                    height: 30px;
+                    button{
+                        color: #fff;
+                        margin-left: 0;
+                    }
+                    label{
+                        font-size: larger;
+                        user-select:initial;
+                        color: #0FBA84;
+                    }
+                }
+                &.start,&.focus{
+                    float: right;
+                }
+                &.focus{
+                    .people{
+                        padding:0 10px;
+                        color: #FF44D1;
+                    }
+                }
+            }
+        }
+        p:nth-child(3){
+            height: 30px;
+            line-height: 30px;
+            padding: 0 20px;
+            span{
+                margin-right: 50px;
+                color: #0fbae9;
+                label{
+                    color: rgba(0,0,0,0.65);
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+.live-source{
+    width: 700px;
+    height:525px;
+    position: relative;
+    overflow: hidden;
+    margin-top: -525px;
+    #myplayer{
+        position:absolute;
+        z-index:1;
+        width:100%;
+        height:100%;
+        text-align: center;
+        background-color: #000;
+        color: #fff;
+        font-size: larger;
+    }
+}
+.live-gifts{
+    width: 700px;
+    height:90px;
+    background-color: #fff;
+    ul{
+        width: 600px;
+        height: 100%;
+        position: relative;
+        left: 100px;
+        top: -90px;
+        li{
+            display: inline-block;
+            width: 50px;
+            height: 90px;
+            white-space: nowrap;
+            margin: 0 5px;
+            float: left;
+            position: relative;
+            z-index: 1;
+            img{
+                width: 100%;
+                height: 50px;
+                margin: 20px 0;
+                cursor: pointer;
+                &:hover{
+                    transform:scale(1.1);
+                }
+            }
+            &>div{
+                display: none;
+            }
+            &:hover >.gift-info{
+                display: block;
+                position: absolute;
+                top: -120px;
+                z-index: 1;
+                padding: 10px 20px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 1px 5px #333;
+                min-width: 160px;
+                .gift-give{
+                    width: 100%;
+                    height: 100%;
+                    input{
+                        width: 100%;
+                        border: 1px solid #ccc;
+                        margin: 10px 0;
+                        float: left;
+                        height: 25px;
+                        line-height: 25px;
+                        padding: 5px;
+                    }
+                    button{
+                        float: left;
+                        width: 46%;
+                        margin: 0 2%;
+                        height: 25px;
+                        line-height: 25px;
+                        color: #fff;
+                        background-color: #0fbae9;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #0FBAD7;
+                        }
+                        &.disabled{
+                            background-color: #aaa;
+                            cursor: not-allowed;
+                        }
+                    }
+                }
+                &:after{
+                    content: "";
+                    position: absolute;
+                    border: 5px solid transparent;
+                    width: 5px;
+                    height: 5px;
+                    left: 20px;
+                    bottom: -5px;
+                    transform: rotate(45deg);
+                    background-color: #fff;
+                    box-shadow: 2px 2px 5px #555;
+                }
+                &>p{
+                    font-size: 14px;
+                    color: #555;
+                }
+                .gift-price{
+                    color: #ff8800;
+                }
+                .gift-tips{
+                    margin-top: 10px;
+                    &>span{
+                        display: block;
+                        width: 100%;
+                        height: 20px;
+                        line-height: 20px;
+                        color: #555;
+                        &>span{
+                            color: #ff8800
+                        }
+                    }
+                }
+            }
+        }
+        &:after{
+            clear:both
+        }
+    }
+    .balanceNotEnough{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: rgba(0,0,0,0.3);
+        div{
+            width: 160px;
+            height: 90px;
+            left: 50%;
+            margin-left: -80px;
+            top: 50%;
+            margin-top: -45px;
+            position: relative;
+            background-color: #fff;
+            span{
+                display: block;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                font-size: 16px;
+                color: #f80;
+            }
+            button{
+                margin: 10px 40px;
+                width: 80px;
+                height: 40px;
+                background-color: #ff4500;
+                color: #fff;
+                font-size: 14px;
+                letter-spacing: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.danmu-container{
+    width: 300px;
+    height:625px;
+    float: right;
+    background-color:#fff;
+    user-select:initial;
+}
+
+.danmu-content{
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(250,250,250,0.5);
+    .clear{
+        position: absolute;
+        font-size: 10px;
+        right: 10px;
+        background-color: #0fbae9;
+        color: #fff;
+        padding: 3px 5px;
+        border-radius: 2px;
+        cursor: pointer;
+        margin: 2px -2px;
+        i{
+            vertical-align: bottom;
+            font-size: 15px;
+            margin: 0 5px;
+        }
+    }
+    .scroll-Control{
+        position: absolute;
+        font-size: 10px;
+        right: 80px;
+        background-color: #0fbae9;
+        color: #fff;
+        padding: 3px 5px;
+        border-radius: 2px;
+        cursor: pointer;
+        margin: 2px -2px;
+        i{
+            vertical-align: bottom;
+            font-size: 15px;
+            margin: 0 5px;
+        }
+    }
+}
+.danmu-content-detail{
+    width: 100%;
+    height:100%;
+    padding:30px 5px 5px 5px;
+    color: #000;
+    float: left;
+    overflow-y:scroll;
+    li{
+        list-style: none;
+        word-wrap:break-word;
+        line-height: 20px;
+        span{
+            margin-right: 5px;
+            color: #0fbae9;
+            cursor: pointer;
+            float: left;
+        }
+        &.gifts{
+            color: #fff000;
+            font-size: larger;
+            background-color: #0FB9D3;
+            margin: 10px 0;
+            &>span{
+                color: #00ff00;
+            }
+            &>label{
+                color: #fff;
+                font-weight: bold;
+                padding: 5px;
+            }
+        }
+    }
+}
+.post-danmu{
+    width: 300px;
+    height:90px;
+    position: relative;
+    .unlog_layer{
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        span{
+            line-height: 90px;
+            padding-left: 50px;
+            color: #0FBAe9;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+    textarea{
+        width: 215px;
+        height:70px;
+        margin:10px 0;
+        padding:5px;
+        float: left;
+        resize:none;
+        margin-left: 5px
+    }
+    button{
+        width: 70px;
+        height:70px;
+        margin:10px 5px;
+        cursor: pointer;
+        color: #fff;
+        background-color:#FFA500;
+        float: left;
+    }
+}
+.free-chest{
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+    position: relative;
+    img{
+        width: 90px;
+    }
+    span{
+        position: absolute;
+        left: 0;
+        top: 50px;
+        background-color: #0FBAA7;
+        color: #fff;
+        display: block;
+        width: 60px;
+        left: 15px;
+        text-align: center;
+        border-radius: 5px;
+    }
+}

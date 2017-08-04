@@ -1,0 +1,137 @@
+.profiles{
+	width: 100%;
+	height: auto;
+	.profile{
+		width: 100%;
+		height: 130px;
+		background-color: #f9f9f9;
+		.profile-infos{
+			.profile-avatar{
+				margin: 5px;
+				float: left;
+				width: 120px;
+			}
+			.profile-text{
+				float: left;
+				margin-left: 10px;
+				p{
+					height: 40px;
+					line-height: 40px;
+					&:nth-child(1){
+						height: 45px;
+						line-height: 45px;
+						font-size: 18px;
+						font-weight: bold;
+					}
+					label{
+						margin-right: 10px;
+						font-weight: bold;
+					}
+					span{
+						display: inline-block;
+						height: 40px;
+						line-height: 40px;
+						margin-right: 10px;
+						img{
+							margin-right: 5px;
+							vertical-align: text-bottom;
+						}
+					}
+				}
+			}
+		}
+		.update-profile-action{
+			width: auto;
+			float: right;
+			height: 30px;
+			line-height: 30px;
+			margin:50px 20px;
+			color: #fff;
+			button{
+				padding: 0 10px;
+				border-radius: 3px;
+				cursor: pointer;
+				background-color: #0fbae9;
+				&:hover{
+					background-color: #0fbad8;
+				}
+			}
+		}
+	}
+	.change-list{
+		width: 100%;
+		button{
+			height: 35px;
+		    padding: 0 20px;
+		    background-color: #ff4500;
+		    color: #fff;
+		    margin: 20px;
+		    cursor: pointer;
+		}
+	}
+	.updateAvatar{
+		width: 250px;
+   		margin: 0 auto;
+   		img{
+   			width: 100px;
+   			height: 100px;
+   			width: 100px;
+		    height: 100px;
+		    object-fit: scale-down;
+		    border: 1px dashed;
+   		}
+   		label{
+   			width: 40px;
+		    float: left;
+		    margin: 0 10px;
+   		}
+   		input{
+   			width: 190px;
+   			float: left;
+   			line-height: 20px;
+    		margin: 10px 0;
+   		}
+   		p{
+		    min-height: 40px;
+		    line-height: 40px;
+		    margin: 10px 0;
+   		}
+   		button{
+   			margin-left: 60px;
+		    padding: 0 10px;
+		    color: #fff;
+		    background-color: #0fbae9;
+		    border-radius: 3px;
+		    cursor: pointer;
+		}
+	}
+	.updateNickname,.updateEmail{
+		width: 250px;
+   		margin: 0 auto;
+   		label{
+   			width: 50px;
+		    float: left;
+		    margin: 0 10px;
+   		}
+   		input{
+   			width: 180px;
+   			float: left;
+   			line-height: 40px;
+   			border: 1px solid #ccc;
+   			padding: 0 8px;
+   		}
+   		p{
+		    min-height: 40px;
+		    line-height: 40px;
+		    margin: 10px 0;
+   		}
+   		button{
+   			margin-left: 70px;
+		    padding: 0 10px;
+		    color: #fff;
+		    background-color: #0fbae9;
+		    border-radius: 3px;
+		    cursor: pointer;
+		}
+	}
+}

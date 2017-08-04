@@ -1,0 +1,41 @@
+.danmu-manage{
+	background-color: #fff;
+	height: 640px;
+	overflow-y:scroll; 
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px;
+	float: left;
+	border-radius: 5px;
+	&:after{
+		clear: both;
+	}
+	button.ant-btn{
+		margin:3px 5px;
+	}
+	.add-btn-container{
+		margin: 15px 0;
+		height: 30px;
+		button{
+			margin-left: 10px;
+		}
+	}
+	table{
+		thead{
+			th{
+				text-align: center;
+				background-color: #108E81;
+				color: #fff;
+			}
+		}
+		.ant-table-row.ant-table-row-level-0{
+			text-align: center;
+		}		
+		.action{
+			display: block;
+			height:28px;
+			float: left;
+			margin: 0px auto;
+		}
+	}
+}

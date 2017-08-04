@@ -1,0 +1,96 @@
+.apply-manage{
+	background-color: #fff;
+	height: 640px;
+	overflow-y:scroll; 
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px;
+	float: left;
+	border-radius: 5px;
+	&:after{
+		clear: both;
+	}
+	button.ant-btn{
+		margin:3px 5px;
+	}
+	.add-btn-container{
+		margin: 15px 0;
+		height: 30px;
+		button{
+			margin-left: 10px;
+		}
+	}
+	table{
+		thead{
+			th{
+				text-align: center;
+				background-color: #108E81;
+				color: #fff;
+			}
+		}
+		.ant-table-row.ant-table-row-level-0{
+			text-align: center;
+		}
+		.profiles{
+			display: block;
+			width: 65px;
+			height: 20px;
+			line-height: 20px;
+			.applying{
+				color: #108ee9;
+			    display: block;
+			    width: auto;
+			    cursor: pointer;
+			    margin: 0 auto;
+			}
+		}
+		.status_green{
+			color: green;
+		}
+		.status_gray{
+			color: gray;
+		}
+		.status_orange{
+			color: orange;
+		}
+		.status_red{
+			color: red;
+		}
+		.action{
+			display: block;
+			height:28px;
+			float: left;
+			margin: 0px auto;
+		}
+	}
+}
+
+.apply_profile{
+	width: 100%;
+	height: auto;
+	padding:0px 10px;
+	li{
+		width: 100%;
+		height:auto;
+		.profile_name{
+			height: 25px;
+			line-height: 25px;
+			width: 100px;
+			color: #333;
+			font-weight: bold;
+			float: left;
+		}
+		.profile_img_container{
+			min-height: 25px;
+			line-height: 25px;
+			text-align: left;
+			padding: 4px;
+			.profile_img{
+				max-height: 150px;
+			    width: 250px;
+			    object-fit: contain;
+			    border: 1px dashed #ddd;
+			}
+		}
+	}
+}

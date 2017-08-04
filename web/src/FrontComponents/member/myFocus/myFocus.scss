@@ -1,0 +1,35 @@
+.focuses{
+	.total-title{
+		display: block;
+	    line-height: 30px;
+	    font-size: 18px;
+	    width: 100px;
+	    border-bottom: 2px solid #0fbae9;
+	}
+	&>div{
+		&>a{
+			display: block;
+		    float: left;
+		    margin-right: 1%;
+		    margin-top: 15px;
+		    margin-bottom: 10px;
+		    width: 24%;
+		    &:nth-child(3n+5){
+		    	margin-right: 0;
+		    }
+		    .live-rooms{
+		    	width: 100%;
+		    	height: 120px;
+		    }
+		}
+		.none{
+			width: 100%;
+		    height: 25px;
+		    text-align: center;
+		    font-size: larger;
+		    margin: 20px 0;
+		    background-color: azure;
+		    display: block;
+		}
+	}
+}
