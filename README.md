@@ -10,3 +10,5 @@ To run this project,you should install Node.js,FFmpeg,Mysql software for your cu
 3. Then run "#npm start" to start this project;
 4. Open "#http://localhost:3000" in Browser to see it, the backstage url "#http://localhost:3000/admin", u can change the dev host and port in package.json file.
 5. Any questions or suggestions please just let know. Email: #gpproo@163.com.
+
+Thanks for iizukanao/node-rtsp-rtmp-server, the RTMP server side used this with little changed.
