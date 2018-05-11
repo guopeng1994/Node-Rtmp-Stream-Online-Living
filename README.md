@@ -1,5 +1,5 @@
 # Node-Rtmp-Stream-Online-Living
-A Website of Online-Living Show which based on Node.js Express framework,React+Redux+Webpack, RTMP Protocol. Such as Twitch,Huya etc, but not totally like them. It's only for learning and communication,there may be a risk of being used in business because of my limited skill.This project will continue to be updated and expanded.
+A Website of Online-Living Show which based on Node.js Express framework,React+Redux+Webpack, RTMP Protocol. Such as Twitch,Huya etc, but not totally like them. It's only for learning and communication,there may be a risk of being used in business because of my limited skill
 
 # Prepare:
 To run this project,you should install Node.js,FFmpeg,Mysql software for your current OS, and remember to edit DBconf.js file to config your database info,such as dbname,username,password,port etc, it's location : server/conf/DBconf.js
